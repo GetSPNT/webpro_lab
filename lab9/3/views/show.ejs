@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List of Songs</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+              <h3 class="text-center mb-0">
+                <i class="fas fa-music me-2"></i>List of Songs
+              </h3>
+            </div>
+            <div class="card-body p-0">
+              <table class="table table-hover mb-0">
+                <thead class="table-dark">
+                  <tr>
+                    <th class="px-4">
+                      <i class="fas fa-headphones me-2"></i>Songs
+                    </th>
+                    <th><i class="fas fa-user me-2"></i>Artist</th>
+                    <th><i class="fas fa-calendar me-2"></i>Released</th>
+                    <th><i class="fas fa-tag me-2"></i>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% songs.forEach((song) => { %>
+                  <tr>
+                    <td class="px-4"><%=song.song_name%></td>
+                    <td><%=song.artist_name%></td>
+                    <td><%=song.song_release_year%></td>
+                    <td><%=song.song_type%></td>
+                  </tr>
+                  <% }); %>
+                  
+                </tbody>
+              </table>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <main class="container py-5">
+      <section class="row justify-content-center">
+        <article class="col-md-8">
+          <div class="card shadow-sm">
+            <header class="card-header bg-primary text-white text-center py-3">
+              <h1 class="mb-0">User Registration</h1>
+            </header>
+            <div class="card-body p-4">
+              <form action="/register" method="POST">
+                <fieldset class="row g-3">
+                  <legend class="visually-hidden">
+                    Registration Information
+                  </legend>
+
+                  <div class="col-md-6">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-primary text-white">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        placeholder="Choose a username"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-primary text-white">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                      </span>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-primary text-white">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                      </span>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="your.email@example.com"
+                        required
+                        autocomplete="email"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstname"
+                      name="firstname"
+                      placeholder="Enter your first name"
+                      required
+                      autocomplete="given-name"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastname"
+                      name="lastname"
+                      placeholder="Enter your last name"
+                      required
+                      autocomplete="family-name"
+                    />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="age" class="form-label">Age</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-primary text-white">
+                        <i class="fas fa-birthday-cake" aria-hidden="true"></i>
+                      </span>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="age"
+                        name="age"
+                        placeholder="Your age"
+                        min="18"
+                        max="120"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-8">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-primary text-white">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                      </span>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        name="phone"
+                        placeholder="Your phone number"
+                        required
+                        autocomplete="tel"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="address" class="form-label">Address</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-primary text-white">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                      </span>
+                      <textarea
+                        class="form-control"
+                        id="address"
+                        name="address"
+                        placeholder="Your full address"
+                        rows="3"
+                        required
+                        autocomplete="street-address"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary w-100 py-2">
+                      <i class="fas fa-user-plus me-2" aria-hidden="true"></i
+                      >Register Account
+                    </button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
