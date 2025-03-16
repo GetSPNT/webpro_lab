@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Todo | Todo List Application</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <header class="bg-primary text-white py-3 mb-4">
+      <div class="container">
+        <h1 class="display-5 text-center">Add New Todo</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <form id="addTodoForm" action="/createTodo" method="POST">
+                <div class="mb-3">
+                  <label for="todoTitle" class="form-label">Title</label>
+                  <input
+                    type="text"
+                    name="todoTitle"
+                    class="form-control"
+                    id="todoTitle"
+                    required
+                    placeholder="Enter task title"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="todoDescription" class="form-label"
+                    >Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="todoDescription"
+                    name="todoDescription"
+                    rows="3"
+                    placeholder="Enter task description"
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="todoDeadline" class="form-label">Deadline</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="todoDeadline"
+                    name="todoDeadline"
+                    required
+                  />
+                </div>
+                
+                <div class="d-flex justify-content-between">
+                  <a href="/" class="btn btn-secondary"> Cancel </a>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="saveTodoBtn"
+                  >
+                    Save Todo
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script></script>
+  </body>
+</html>

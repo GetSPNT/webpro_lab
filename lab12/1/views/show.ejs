@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Information</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <main class="container py-5">
+      <section class="card shadow border-0 rounded-3">
+        <header class="card-header bg-primary text-white p-4">
+          <h1 class="h3 mb-0">Employee Information</h1>
+        </header>
+
+        <form action="/save" method="POST" class="card-body p-4">
+          <fieldset class="row g-3">
+            <div class="col-md-6">
+              <label for="employeeId" class="form-label">Employee ID:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="employeeId"
+                name="employeeId"
+                value="<%= sessionData?.customerId || customers[0]?.CustomerId || '' %>"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="firstName" class="form-label">Firstname:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                value="<%= sessionData?.firstName || customers[0]?.FirstName || '' %>"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="lastName" class="form-label">Lastname:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                name="lastName"
+                value="<%= sessionData?.lastName || customers[0]?.LastName || '' %>"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                value="<%= sessionData?.email || customers[0]?.Email || '' %>"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Phone:</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                name="phone"
+                value="<%= sessionData?.phone || customers[0]?.Phone || '' %>"
+              />
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Address:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                name="address"
+                value="<%= sessionData?.address || customers[0]?.Address || '' %>"
+              />
+            </div>
+          </fieldset>
+
+          <footer class="d-flex gap-2 justify-content-end mt-4">
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-save me-1"></i> Save Data
+            </button>
+            <a href="/show" class="btn btn-info text-white">
+              <i class="bi bi-eye me-1"></i> Show Data
+            </a>
+            <a href="/clear" class="btn btn-secondary">
+              <i class="bi bi-x-circle me-1"></i> Clear Data
+            </a>
+          </footer>
+        </form>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
