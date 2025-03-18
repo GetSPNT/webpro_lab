@@ -17,8 +17,6 @@ app.get("/", async (req, res) => {
   });
 });
 
-app.get("/findUserById")
-
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

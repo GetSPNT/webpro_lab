@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Todo</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <header class="bg-primary text-white py-4 mb-4 shadow">
+      <div class="container">
+        <h1 class="display-5 text-center fw-bold">Edit Todo</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="mb-4">
+        <form action="/updateTodo/<%= todo.id %>" method="POST">
+          <div class="mb-3">
+            <label for="todoTitle" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="todoTitle"
+              name="todoTitle"
+              value="<%= todo.title %>"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="todoDescription" class="form-label">Description</label>
+            <textarea
+              class="form-control"
+              id="todoDescription"
+              name="todoDescription"
+              rows="3"
+              required
+            >
+<%= todo.description %></textarea
+            >
+          </div>
+          <div class="mb-3">
+            <label for="todoDeadline" class="form-label">Deadline</label>
+            <input
+              type="date"
+              class="form-control"
+              id="todoDeadline"
+              name="todoDeadline"
+              value="<%= todo.deadline %>"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Update Todo</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

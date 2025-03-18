@@ -25,22 +25,11 @@ app.post("/register", async (req, res) => {
       phone,
     } = req.body;
 
-    const userData = {
-      username,
-      password,
-      email,
-      firstname,
-      lastname,
-      age,
-      address,
-      phone,
-    };
-
     const sql = `
       INSERT INTO Users (username, password, email, firstname, lastname, age, address, phone) 
       VALUES(?, ?, ?, ?, ?, ?, ?, ?)`;
 
-    conn.query(sql, Object.values(userData), (err, result) => {
+    conn.query(sql, [username, password, email, firstname, lastname, age, address, phone], (err, result) => {
       if (err) {
         console.error("Error inserting user:", err);
         return res

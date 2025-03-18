@@ -1,7 +1,5 @@
 const express = require("express");
-const cookieParser = require("cookie-parser");
 const sessions = require("express-session");
-const http = require("http");
 const port = 3000;
 const app = express();
 const sqlite3 = require("sqlite3").verbose();
@@ -34,6 +32,7 @@ app.get("/", (req, res) => {
       console.error("Error retrieving customers:", err);
       return res.status(500).json({ message: "Failed to retrieve customers" });
     }
+    res.render("show", { customers: rows, sessionData: req.session.customer });
   });
 });
 
@@ -48,16 +47,23 @@ app.post("/save", (req, res) => {
     phone,
     address,
   };
-
-  console.log("Saved data to session:", req.session.customer);
   res.render("show", { customers: [], sessionData: [] });
 });
 
-app.get('/show',function(req, res){
-  
-  res.send(req.session.customer);
+app.get("/show", function (req, res) {
+  res.render("show", { customers: [], sessionData: req.session.customer });
+});
+
+app.get("/clear", function (req, res) {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Error destroying session:", err);
+      return res.status(500).json({ message: "Failed to destroy session" });
+    }
+    res.render("show", { customers: [], sessionData: [] });
   });
-  
+});
+
 app.listen(port, () => {
   console.log(`Starting Node.js server at port ${port}`);
 });
